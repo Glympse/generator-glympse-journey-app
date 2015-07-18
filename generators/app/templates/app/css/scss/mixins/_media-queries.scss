@@ -1,0 +1,32 @@
+/* Media Queries
+---------------------------------------------------------------------- */
+
+@mixin respond-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-minH($height) {
+	@media screen and (min-height: $height) {
+		@content;
+	}
+}
+
+@mixin respond-maxH($height) {
+	@media screen and (max-height: $height) {
+		@content;
+	}
+}
+
+@mixin respond-maxWH($width, $height) {
+	@media screen and (max-width: $width), screen and (max-height: $height) {
+		@content;
+	}
+}

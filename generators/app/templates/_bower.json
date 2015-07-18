@@ -1,0 +1,43 @@
+{
+	"name": "<%= appname %>",
+	"description": "Some Glympse Journey-based App",
+	"version": "0.1.0",
+	"homepage": "<%= githubUrl %>/<%= appname %>",
+	"authors":
+	[
+		{
+			"name": "<%= realname %>",
+			"email": "<%= email %>",
+			"url": "<%= githubUrl %>"
+		}
+	],
+	"main": "app/",
+	"moduleType":
+	[
+		"amd"
+	],
+	"keywords":
+	[
+		"Glympse",
+		"Journey"
+	],
+	"private": false,
+	"ignore":
+	[
+		"**/.*",
+		"node_modules",
+		"src/lib",
+		"test",
+		"tests",
+		"src/require*",
+		"*.html",
+		"content",
+		"styles"
+	],
+	"dependencies":
+	{
+		"requirejs": "~2.1.11",
+		"almond": "~0.3.0",
+		"glympse-journey-core": "~1.0.2"
+	}
+}

@@ -1,0 +1,63 @@
+/* Main app
+---------------------------------------------------------------------- */
+
+body {
+	margin: 0;
+	font-family: $font-family-main;
+	font-size: $font-size-main;
+	background: $color-background;
+}
+
+#divApp {
+	height: $app-height;
+	position: relative;
+	overflow: hidden;
+}
+
+#glympser {
+	height: $app-height;
+	width: 100%
+}
+
+.phaseContainer {
+	margin: 10px 0 0 10px;
+	line-height: 26px;
+}
+
+#currentPhase {
+	font-weight:bold;
+	font-style: italic;
+}
+
+#output {
+	margin: 0 10px 10px 10px;
+}
+
+.outputWrapper {
+	border-bottom: 1px solid #cdcdcd;
+	padding-bottom: 10px;
+}
+
+.outputHeader {
+	font-weight: bold;
+	font-style: italic;
+	float: left;
+	line-height: 26px;
+}
+
+.outputClear {
+	font-weight: bold;
+	font-style: italic;
+	float: right;
+}
+
+.outputMid {
+	text-align: center;
+}
+
+#outputText {
+	clear: both;
+	max-height: $output-max-height;
+	padding-top: 10px;
+	overflow-y: auto;
+}

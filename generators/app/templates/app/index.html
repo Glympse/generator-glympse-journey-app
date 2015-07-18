@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Glympse Journey Core - Test Page</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=no" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="msapplication-tap-highlight" content="no" />
+
+	<script type=text/javascript src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type=text/javascript src="//glympse.com/Scripts/here/6/mapsjs-core.js"></script>
+	<script type=text/javascript src="//glympse.com/Scripts/here/6/mapsjs-service.js"></script>
+	<script type=text/javascript src="//glympse.com/Scripts/here/6/mapsjs-mapevents.js"></script>
+	<script type=text/javascript src="//glympse.com/js/loader/latest/jquery.glympser.min.js"></script>
+	
+	<!-- build:css(app/) app.css -->
+	<link rel="stylesheet" type="text/css" href="css/app.css" />
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	
+	<!-- process:remove:dev -->
+	<script type="text/javascript" src="src/app.js"></script>
+	<!-- /process -->
+
+	<script type="text/javascript">
+		var urlParams = {};
+		(function () {
+			var e, a = /\+/g, r = /([^&=]+)=?([^&]*)/g, d = function (s) { return decodeURIComponent(s.replace(a, " ")); }, q = window.location.search.substring(1);
+			while ((e = r.exec(q))) urlParams[d(e[1])] = d(e[2]);
+		})();
+
+		var screenOnly = (urlParams.screenOnly != null);
+		var t = urlParams.t || 'demobot0';
+		
+		window.cfgApp =
+		{
+			app: {
+				
+				// Core/app settings
+				  dbg: (urlParams.debug > 0) ? 0 : 1
+				, screenOnly: screenOnly
+				, demo: (t.indexOf('demobot') >= 0)
+				, mapCompletedToFeedback: true
+				, mapEtaNotLive: true
+				, "provider": {
+					  "id": "enroute"
+					, "appKey": "testappkey"
+					, "baseUrl": "https://api.enterprise.glympse.com/api/v1/feedback/invites/$INVITE/submit"
+					, "dbg": 0
+
+					, "surveyId": 103
+					, "surveyIdRating": 110
+					, "surveyIdInfo": [ 111 ]
+					, "surveyOptions": [ ]
+				}
+				
+				// App-specific
+				, ratings: {
+					accumulate: true
+					, numRatings: 5
+					, moreFeedbackThreshold: -1
+					, classes: {
+						_container: "starContainer"
+						, on: "star"
+						, off: "star starOff"
+					}
+				}
+				, strings:
+				{
+					  sample_text: 'Some Text!!'
+					, alt_text: 'Thank you!'
+				}
+			}
+			, viewer: {
+				  t: t
+				, basePath: '//glympse.com/'
+				, pg: (urlParams.pg) ? (urlParams.pg) : null
+				, w: 800
+				, h: 600
+				, onlyCss: (urlParams.onlyCss != null)
+				, onlyCanvas: (urlParams.onlyCanvas != null)
+				, broadcastData: true
+				, hideDialog: 255
+				, showTraffic: true
+				, balloonRadius: 2
+				, etaColor: 'rgba(242,0,48,0.8)'
+				, botStartOffset: 0.3
+				, botTimeScale: 1.25
+				, trailLength: 300
+				, zoomMax: -1
+			}
+			, adapter: {
+				  hideEvents: false
+				, hideUpdates: false
+			}
+		};
+	</script>
+
+	<!-- process:remove:dist -->
+	<script type="text/javascript" src="lib/requirejs/require.js" data-main="src/requireConfig"></script>
+	<!-- /process -->
+</head>
+<body>
+	<div id="divApp">
+		<div id="glympser"></div>
+	</div>
+	<div class="phaseContainer">Current Phase: <span id="currentPhase">---</span></div>
+	<div id="output">
+		<div class='outputWrapper'>
+			<div class="outputHeader">Output:</div>
+			<div class="outputClear"><input id="btnOutputClear" type="button" value="Clear"></div>
+			<div class="outputMid">&nbsp;</div>
+		</div>
+		<div id="outputText"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+	"directory": "app/lib",
+	"scripts":
+	{
+		"postinstall":"grunt bowerRequirejs"
+	}
+}

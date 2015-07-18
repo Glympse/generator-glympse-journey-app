@@ -1,0 +1,17 @@
+// @include retina-image(home-icon, 32px 20px);
+
+@mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $retina-suffix: _2x) {
+
+  background-image: url("#{$filename}.#{$extension}");
+  background-size: $background-size;
+  background-repeat: no-repeat;
+
+  @include hidpi {
+    @if $retina-filename {
+      background-image: url("#{$retina-filename}.#{$extension}");
+    }
+    @else {
+      background-image: url("#{$filename}#{$retina-suffix}.#{$extension}");
+    }
+  }
+}
