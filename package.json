@@ -6,13 +6,9 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Glympse/generator-glympse-journey-app"
+    "url": "git://github.com/Glympse/generator-glympse-journey-app.git"
   },
-  "author": {
-    "name": "Jason Keimig",
-    "email": "jason@glympse.com",
-    "url": "https://github.com/Glympse"
-  },
+  "author": "Jason Keimig <jason@glympse.com> (https://github.com/Glympse)",
   "scripts": {
     "test": "mocha"
   },
@@ -21,8 +17,8 @@
   ],
   "keywords": [
     "yeoman-generator",
-	"Glympse",
-	"Journey"
+    "Glympse",
+    "Journey"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
@@ -35,5 +31,12 @@
   },
   "devDependencies": {
     "mocha": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/Glympse/generator-glympse-journey-app/issues"
+  },
+  "homepage": "https://github.com/Glympse/generator-glympse-journey-app#readme",
+  "directories": {
+    "test": "test"
   }
 }
